@@ -15,7 +15,7 @@ def features_extractor(file_name):
 
 def lstm_prediction():
     from keras.models import load_model
-    model = load_model('best_model.hdf5')
+    model = load_model('models/best_model.hdf5')
 
     file_name = 'output_audio.mp3'
     x = features_extractor(file_name)

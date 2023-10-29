@@ -4,10 +4,10 @@ import os
 import shutil
 
 
-model = YOLO('best.pt')
+model = YOLO('models/best.pt')
 
 def convert_to_mp4():
-    input_avi_file = "static/predict/test3.avi"
+    input_avi_file = "static/predict/test.avi"
     output_mp4_file = "static/predict/output.mp4"
 
     video = VideoFileClip(input_avi_file)

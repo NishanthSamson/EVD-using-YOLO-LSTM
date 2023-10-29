@@ -12,9 +12,9 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
+    file_path = "uploads/test.avi"
     uploaded_file = request.files['file']
-    if uploaded_file and uploaded_file.filename:
-        file_path = "uploads/" + uploaded_file.filename
+    if uploaded_file:
         uploaded_file.save(file_path)
         predict(file_path)
         convert_to_mp3(file_path)
