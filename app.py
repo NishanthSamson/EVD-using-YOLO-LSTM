@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from mp3 import convert_to_mp3
 from EVD import lstm_prediction
 from yolo8 import predict
 
 
 app = Flask(__name__)
+app.secret_key = 'nevergonnagiveyouup'
 
 @app.route('/')
 def index():
@@ -19,12 +20,22 @@ def upload_file():
         predict(file_path)
         convert_to_mp3(file_path)
         a = lstm_prediction()
-    return redirect(url_for('view', vehicle = a))
+        session['flag'] = 1
+        session['vehicle'] = a
+        return redirect(url_for('results'))
+    else:
+        return "INVALID FILE UPLOAD"
 
-@app.route('/view/<vehicle>')
-def view(vehicle):
-    return render_template('view.html', vehicle = vehicle)
+@app.route('/results')
+def results():
 
+    flag = session.get('flag', 0)
+    vehicle = session.get('vehicle')
+    
+    if(flag==1):
+        return render_template('results.html', vehicle = vehicle)
+    else:
+        return redirect(url_for('index'))
 
 if(__name__ == '__main__'):
     app.run(debug = True)
