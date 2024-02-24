@@ -24,7 +24,7 @@
                 <a class="nav-link active" href="{{url_for('results')}}">Reuslts</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="{{url_for('about')}}">About</a>
               </li>
             </ul>
           </div>
@@ -35,10 +35,11 @@
     <div class="col-md-3"></div>
     <div class="col-md-6"> 
         <h2 class="d-flex justify-content-start mt-3 mb-3 text-success">Predicted Vehicle: {{vehicle}}</h2>
-        <video controls autoplay="True" width="100%">
+        <!-- <video controls autoplay="True" width="100%">
             <source src="{{ url_for('static', filename='predict/output.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
-        </video>
+        </video> -->
+        <object data="{{ url_for('static', filename='predict/test.avi') }}"> <param name="src" value="{{ url_for('static', filename='predict/test.avi') }}" /> </object>
     <div class="d-flex justify-content-center d-none" role="status">
     </div>
     </div>   

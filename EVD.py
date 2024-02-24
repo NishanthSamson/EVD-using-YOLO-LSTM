@@ -28,7 +28,7 @@ def lstm_prediction():
     predicted_class = np.argmax(yhat)
 
     if(predicted_class==0):
-        return "Ambulance"
+        return "Ambulance/Police"
 
     elif(predicted_class==1):
         return "Firetruck"
