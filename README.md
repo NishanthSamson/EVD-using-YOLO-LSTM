@@ -1,5 +1,11 @@
 # Emergency Vehicle Detection using YOLO and LSTM
-The Emergency Vehicle Detection System offers an integrated approach to emergency vehicle detection and classification by combining visual and auditory analysis. YOLOv8 excels in identifying emergency vehicles within the video stream, while the LSTM model specializes in the classification of audio cues. This multi-modal approach ensures a higher level of accuracy, reliability, and comprehensiveness, making it a powerful tool for emergency services, traffic management, and public safety applications. The system's real-time capabilities and efficiency further solidify its position as a valuable asset in the field of public safety and emergency response.
+The Emergency Vehicle Detection System integrates visual and auditory analysis to accurately detect and classify emergency vehicles. Leveraging YOLOv8 for visual identification and an LSTM model for audio classification, this system ensures high accuracy and reliability. It is designed for applications in emergency services, traffic management, and public safety. With real-time capabilities and optimized efficiency, it serves as a valuable asset for enhancing emergency response efforts.
+
+**Key Features:**
+- Visual and auditory analysis for comprehensive detection
+- YOLOv8 for precise identification of emergency vehicles in video streams
+- LSTM model for accurate classification based on audio cues
+- Real-time performance and efficiency
 
 <h3>Screenshots</h3>
 Ambulance Prediction Output
